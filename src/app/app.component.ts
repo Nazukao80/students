@@ -11,7 +11,7 @@ import { Subject } from 'rxjs/Subject';
 export class MyApp {
 
   activePage = new Subject();
-  rootPage: any = 'HomePage';
+  rootPage: any = HomePage;
   @ViewChild(Nav) nav: Nav;
   pages: Array<{ title: string, component: any, active: boolean, icon: string }>;
   rightMenuItems: Array<{ icon: string, active: boolean }>;
@@ -26,11 +26,13 @@ export class MyApp {
 
     this.rightMenuItems = [
       { icon: 'home', active: true },
-      { icon: 'Login', active: false }
+      { icon: 'Login', active: false },
+      { icon: 'Student', active: false}
     ];
     this.pages = [
       { title: 'Home', component: 'HomePage', active: true, icon: 'home' },
-      { title: 'Login', component: 'LoginPage', active: false, icon: 'archive' }
+      { title: 'Login', component: 'LoginPage', active: false, icon: 'archive' },
+      { title: 'Student', component: 'StudentPage', active: false, icon: 'angular' }
     ];
 
     this.activePage.subscribe((selectedPage: any) => {
@@ -51,11 +53,11 @@ export class MyApp {
       this.menuCtrl.enable(false, 'right');
     });
   }
-  openPage(page) {
+  openPage(component) {
     // Reset the content nav to have just this page
     // we wouldn't want the back button to show in this scenario
-    this.nav.setRoot(page.component);
-    this.activePage.next(page);
+    /* this.nav.setRoot(page.component) */;
+    this.nav.push(component);
   }
 
   rightMenuClick(item) {
