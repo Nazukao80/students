@@ -17,15 +17,13 @@ export class StudentProvider {
 
   constructor(public http: Http) {
     console.log('Hello StudentProvider Provider');
+    this.students = [];
   }
 
-  getStudents(): Observable<Array<Student>>{
+  getStudents(): Observable<any>{
     return this.http.get("assets/json/students.json").map((value)=>{
-      value.json().forEach(element => {
-        let student = new Student(element.name, element.second_name, element.account, element.email, element.matter);
-        this.students.push(student);
-      });
-      return this.students; 
+     return  value.json();
+      
     });  
   }
 }

@@ -1,0 +1,44 @@
+[{
+    "name":"Howard",
+    "second_name" : "McRoe",
+    "email" : "howard@gmail.com",
+    "account":{
+        "name": "Howard_1980",
+        "password": "19801983"
+    },
+    "matter" : [{
+        "name": "Italian",
+        "vote" : 7
+    }, {
+        "name": "Italian",
+        "vote" : 4
+    },{
+        "name": "Italian",
+        "vote" : 10
+    }
+    
+    ]
+},
+{
+    "name":"Howard2",
+    "second_name" : "McRoe2",
+    "email" : "howard2@gmail.com",
+    "account":{
+        "name": "Howard_1980",
+        "password": "19801983"
+    },
+    "matter" : [{
+        "name": "Italian",
+        "vote" : 7
+    }, {
+        "name": "Math",
+        "vote" : 4
+    },{
+        "name": "French",
+        "vote" : 10
+    }
+    
+    ]
+}
+
+]

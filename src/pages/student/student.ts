@@ -24,14 +24,15 @@ export class StudentPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad StudentPage');
     this.studentProvider.getStudents().subscribe((value)=>{
-      this.students = value;
-      if (value[0] instanceof Student){
-        console.log(this.students);
-      }
-      
-     
+      value.forEach(element => {
+        let student = new Student(element.name, element.second_name, element.account, element.email, element.matter);
+        this.students.push(student);
+      });
     })
   }
 
+/*   ionViewWillUnload(){
+    this.students = [];
+  } */
   
 }
