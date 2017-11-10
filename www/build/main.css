@@ -1,3 +1,4 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
 .ion-ios-add:before {
   content: "\f102";
 }
@@ -25848,6 +25849,89 @@ ion-navbar.toolbar {
 
 #menu-material ion-icon {
   color: #777;
+}
+
+body {
+  background: #3d566e;
+  color: #131414;
+  font-family: 'Montserrat', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-align: center;
+}
+
+#hamburger-icon {
+  width: 20px;
+  height: 10px;
+  position: relative;
+  margin: 0 10px 0 0 !important;
+}
+
+#hamburger-icon .line {
+  display: block;
+  background: #131414;
+  width: 20px;
+  height: 3px;
+  position: absolute;
+  left: 0;
+  border-radius: 1.5px;
+  transition: all 0.4s;
+  -webkit-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+}
+
+#hamburger-icon .line.line-1 {
+  top: 0;
+}
+
+#hamburger-icon .line.line-2 {
+  top: 50%;
+}
+
+#hamburger-icon .line.line-3 {
+  top: 100%;
+}
+
+#hamburger-icon:hover .line-1, #hamburger-icon:focus .line-1 {
+  transform: translateY(-1.5px);
+  -webkit-transform: translateY(-1.5px);
+  -moz-transform: translateY(-1.5px);
+}
+
+#hamburger-icon:hover .line-3, #hamburger-icon:focus .line-3 {
+  transform: translateY(1.5px);
+  -webkit-transform: translateY(1.5px);
+  -moz-transform: translateY(1.5px);
+}
+
+#hamburger-icon.active .line-1 {
+  transform: translateY(5px) translateX(0) rotate(45deg);
+  -webkit-transform: translateY(5px) translateX(0) rotate(45deg);
+  -moz-transform: translateY(5px) translateX(0) rotate(45deg);
+}
+
+#hamburger-icon.active .line-2 {
+  opacity: 0;
+}
+
+#hamburger-icon.active .line-3 {
+  transform: translateY(-5px) translateX(0) rotate(-45deg);
+  -webkit-transform: translateY(-5px) translateX(0) rotate(-45deg);
+  -moz-transform: translateY(-5px) translateX(0) rotate(-45deg);
+}
+
+h1 {
+  text-transform: uppercase;
+}
+
+a {
+  text-decoration: none;
+  color: #1a1d1d;
+  margin: 0.5em 1.5em;
+  display: inline-block;
+}
+
+a:hover, a:focus {
+  color: #131414;
 }
 
 page-home p {

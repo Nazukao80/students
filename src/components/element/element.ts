@@ -1,4 +1,4 @@
-import { Component, ViewChildren, QueryList } from '@angular/core';
+import { Component, ViewChildren, QueryList, ElementRef, ViewChild, Input } from '@angular/core';
 
 /**
  * Generated class for the ElementComponent component.
@@ -11,14 +11,14 @@ import { Component, ViewChildren, QueryList } from '@angular/core';
   templateUrl: 'element.html'
 })
 export class ElementComponent {
-  @ViewChildren("div") divs: QueryList<any>
+  @Input() matter : string;
+  @Input() vote : number;
+  @ViewChild('elem') elem : ElementRef;
   text: string;
-
+  
   constructor() {
     console.log('Hello ElementComponent Component');
     this.text = 'Hello World';
   }
-  ngAfterViewInit() {
-    this.divs.forEach(div => console.log(div));
-  }
+ 
 }

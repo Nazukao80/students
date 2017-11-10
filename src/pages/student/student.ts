@@ -17,8 +17,10 @@ import { Student } from '../../model/student/student.model';
 })
 export class StudentPage {
   private students : Student[];
+  public studentsName : string[];
   constructor(public navCtrl: NavController, public navParams: NavParams, public studentProvider: StudentProvider) {
     this.students = [];
+    this.studentsName = [];
   }
 
   ionViewDidLoad() {
@@ -27,12 +29,17 @@ export class StudentPage {
       value.forEach(element => {
         let student = new Student(element.name, element.second_name, element.account, element.email, element.matter);
         this.students.push(student);
+        this.studentsName.push(element.name);
       });
     })
   }
 
-/*   ionViewWillUnload(){
-    this.students = [];
-  } */
-  
+  filterItems(ev : any) {
+    let val = ev.target.value;
+    if (val && val.trim() !== '') {
+      this.studentsName = this.studentsName.filter(function(item) {
+        return item.toLowerCase().includes(val.toLowerCase());
+      });
+    }
+  }
 }

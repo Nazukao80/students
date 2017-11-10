@@ -1,0 +1,19 @@
+
+<ion-list class="ionic-list">
+    <ion-list-header no-lines no-padding>
+      <button ion-item detail-none
+      (click)="clickEvent()">
+              <a id="hamburger-icon" [ngClass]="{active: status ? true : false}"  title="Menu">
+                  <span class="line line-1"></span>
+                  <span class="line line-2"></span>
+                  <span class="line line-3"></span>
+                </a>
+          {{ name }}
+      </button>
+      <div #accordionContent>
+           
+          <ng-content select="elemento"></ng-content>
+      </div>
+    </ion-list-header>
+</ion-list>
+  
