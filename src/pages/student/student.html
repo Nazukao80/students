@@ -13,7 +13,7 @@
     <ion-searchbar
     [(ngModel)]="searchText" >
   </ion-searchbar>
-<hamburger-icon *ngFor="let student of students  | filter: searchText" [name]="student.name">
+<hamburger-icon (ionicPopUp)="prova($event)" *ngFor="let student of students  | filter: searchText" [name]="student.name">
     <elemento *ngFor="let matter of student.matter" [matter]="matter.name" [vote]="matter.vote"> </elemento>  
 </hamburger-icon>
 </ion-content>

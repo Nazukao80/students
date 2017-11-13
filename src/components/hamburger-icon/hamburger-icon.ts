@@ -1,5 +1,6 @@
-import { Component, ElementRef, ViewChild, Renderer, Input, ContentChild, ContentChildren } from '@angular/core';
+import { Component, ElementRef, ViewChild, Renderer, Input, Output, ContentChild, ContentChildren, EventEmitter } from '@angular/core';
 import { ElementComponent } from '../element/element';
+
 
 /**
  * Generated class for the HamburgerIconComponent component.
@@ -20,11 +21,15 @@ export class HamburgerIconComponent  {
 
   @ViewChild('accordionContent') elementView: ElementRef;
   @ContentChild(ElementComponent) content: ElementComponent;
+  @Output() ionicPopUp = new EventEmitter();
+  @Input() name : string;
   studentsName : Array<string>;
   childElement : any;
   constructor(private renderer: Renderer) {
     console.log('Hello HamburgerIconComponent Component');
-    
+  }
+  ngOnInit(){
+    this.ionicPopUp.emit("hello");
   }
   ngAfterViewInit() {
     this.viewHeight = this.elementView.nativeElement.offsetHeight;
@@ -36,14 +41,13 @@ export class HamburgerIconComponent  {
     const newHeight = this.expanded ? '100%' : '0px';
     this.renderer.setElementStyle(this.elementView.nativeElement, 'height', newHeight);
   }
-  ngAfterContentInit() {
-   
+  /* ngAfterContentInit() {
      this.renderer.listen(this.content.elem.nativeElement, 'click', (evt) =>{
       alert("finally");
       console.log();
      });
 
-  }
+  } */
   
   
 }

@@ -117,7 +117,7 @@ var HomePage = (function () {
 }());
 HomePage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-home',template:/*ion-inline-start:"C:\Users\niccolo.pascucci.TECNORAD\Documents\ionic3_Student_Project\src\pages\home\home.html"*/'<ion-header>\n  <ion-navbar>\n      <button ion-button menuToggle>\n          <ion-icon name="menu"></ion-icon>\n        </button>\n    <ion-title>\n     Student\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n<ion-content padding>\n The world is your oyster.\n  <p>\n        If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.\n  </p>\n</ion-content>'/*ion-inline-end:"C:\Users\niccolo.pascucci.TECNORAD\Documents\ionic3_Student_Project\src\pages\home\home.html"*/
+        selector: 'page-home',template:/*ion-inline-start:"C:\Users\Niccolo\Documents\Projects\students\src\pages\home\home.html"*/'<ion-header>\n\n  <ion-navbar>\n\n      <button ion-button menuToggle>\n\n          <ion-icon name="menu"></ion-icon>\n\n        </button>\n\n    <ion-title>\n\n     Student\n\n    </ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n<ion-content padding>\n\n The world is your oyster.\n\n  <p>\n\n        If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.\n\n  </p>\n\n</ion-content>'/*ion-inline-end:"C:\Users\Niccolo\Documents\Projects\students\src\pages\home\home.html"*/
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */]])
 ], HomePage);
@@ -169,7 +169,7 @@ __decorate([
 ], ElementComponent.prototype, "elem", void 0);
 ElementComponent = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'elemento',template:/*ion-inline-start:"C:\Users\niccolo.pascucci.TECNORAD\Documents\ionic3_Student_Project\src\components\element\element.html"*/'<!-- Generated template for the ElementComponent component -->\n<div #elem>\n    <ion-list>\n        <ion-item>\n          <ion-avatar item-start>\n            <img src="/assets/imgs/logo.png">\n          </ion-avatar>\n          <h2>materia : {{matter}}</h2>\n          <p>voto : {{vote}}</p>\n        </ion-item>\n      </ion-list>\n</div>\n'/*ion-inline-end:"C:\Users\niccolo.pascucci.TECNORAD\Documents\ionic3_Student_Project\src\components\element\element.html"*/
+        selector: 'elemento',template:/*ion-inline-start:"C:\Users\Niccolo\Documents\Projects\students\src\components\element\element.html"*/'<!-- Generated template for the ElementComponent component -->\n\n<div #elem>\n\n    <ion-list>\n\n        <ion-item>\n\n          <ion-avatar item-start>\n\n            <img src="/assets/imgs/logo.png">\n\n          </ion-avatar>\n\n          <h2>materia : {{matter}}</h2>\n\n          <p>voto : {{vote}}</p>\n\n        </ion-item>\n\n      </ion-list>\n\n</div>\n\n'/*ion-inline-end:"C:\Users\Niccolo\Documents\Projects\students\src\components\element\element.html"*/
     }),
     __metadata("design:paramtypes", [])
 ], ElementComponent);
@@ -433,8 +433,12 @@ var HamburgerIconComponent = (function () {
         this.renderer = renderer;
         this.status = false;
         this.expanded = false;
+        this.ionicPopUp = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["w" /* EventEmitter */]();
         console.log('Hello HamburgerIconComponent Component');
     }
+    HamburgerIconComponent.prototype.ngOnInit = function () {
+        this.ionicPopUp.emit("hello");
+    };
     HamburgerIconComponent.prototype.ngAfterViewInit = function () {
         this.viewHeight = this.elementView.nativeElement.offsetHeight;
         this.renderer.setElementStyle(this.elementView.nativeElement, 'height', 0 + 'px');
@@ -445,22 +449,8 @@ var HamburgerIconComponent = (function () {
         var newHeight = this.expanded ? '100%' : '0px';
         this.renderer.setElementStyle(this.elementView.nativeElement, 'height', newHeight);
     };
-    HamburgerIconComponent.prototype.ngAfterContentInit = function () {
-        this.renderer.listen(this.content.elem.nativeElement, 'click', function (evt) {
-            alert("finally");
-            console.log();
-        });
-    };
     return HamburgerIconComponent;
 }());
-__decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */])(),
-    __metadata("design:type", String)
-], HamburgerIconComponent.prototype, "name", void 0);
-__decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */])(),
-    __metadata("design:type", Object)
-], HamburgerIconComponent.prototype, "searchInput", void 0);
 __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* ViewChild */])('accordionContent'),
     __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["u" /* ElementRef */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["u" /* ElementRef */]) === "function" && _a || Object)
@@ -469,9 +459,17 @@ __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["r" /* ContentChild */])(__WEBPACK_IMPORTED_MODULE_1__element_element__["a" /* ElementComponent */]),
     __metadata("design:type", typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__element_element__["a" /* ElementComponent */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__element_element__["a" /* ElementComponent */]) === "function" && _b || Object)
 ], HamburgerIconComponent.prototype, "content", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["R" /* Output */])(),
+    __metadata("design:type", Object)
+], HamburgerIconComponent.prototype, "ionicPopUp", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */])(),
+    __metadata("design:type", String)
+], HamburgerIconComponent.prototype, "name", void 0);
 HamburgerIconComponent = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'hamburger-icon',template:/*ion-inline-start:"C:\Users\niccolo.pascucci.TECNORAD\Documents\ionic3_Student_Project\src\components\hamburger-icon\hamburger-icon.html"*/'\n<ion-list class="ionic-list">\n    <ion-list-header no-lines no-padding>\n      <button ion-item detail-none\n      (click)="clickEvent()">\n              <a id="hamburger-icon" [ngClass]="{active: status ? true : false}"  title="Menu">\n                  <span class="line line-1"></span>\n                  <span class="line line-2"></span>\n                  <span class="line line-3"></span>\n                </a>\n          {{ name }}\n      </button>\n      <div #accordionContent>\n           \n          <ng-content select="elemento"></ng-content>\n      </div>\n    </ion-list-header>\n</ion-list>\n  '/*ion-inline-end:"C:\Users\niccolo.pascucci.TECNORAD\Documents\ionic3_Student_Project\src\components\hamburger-icon\hamburger-icon.html"*/
+        selector: 'hamburger-icon',template:/*ion-inline-start:"C:\Users\Niccolo\Documents\Projects\students\src\components\hamburger-icon\hamburger-icon.html"*/'\n\n<ion-list class="ionic-list">\n\n    <ion-list-header no-lines no-padding>\n\n      <button ion-item detail-none\n\n      (click)="clickEvent()">\n\n              <a id="hamburger-icon" [ngClass]="{active: status ? true : false}"  title="Menu">\n\n                  <span class="line line-1"></span>\n\n                  <span class="line line-2"></span>\n\n                  <span class="line line-3"></span>\n\n                </a>\n\n          {{ name }}\n\n      </button>\n\n      <div #accordionContent>\n\n           \n\n          <ng-content select="elemento"></ng-content>\n\n      </div>\n\n    </ion-list-header>\n\n</ion-list>\n\n  '/*ion-inline-end:"C:\Users\Niccolo\Documents\Projects\students\src\components\hamburger-icon\hamburger-icon.html"*/
     }),
     __metadata("design:paramtypes", [typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["Z" /* Renderer */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["Z" /* Renderer */]) === "function" && _c || Object])
 ], HamburgerIconComponent);
@@ -540,7 +538,7 @@ var LoginPage = (function () {
 }());
 LoginPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-login',template:/*ion-inline-start:"C:\Users\niccolo.pascucci.TECNORAD\Documents\ionic3_Student_Project\src\pages\login\login.html"*/'<ion-header no-border>\n  <ion-navbar transparent>\n  </ion-navbar>\n</ion-header>\n<ion-content>\n  <ion-slides pager="false" autoplay="2000" loop="true" speed="1500" effect="fade">\n    <ion-slide class="slide-background swiper-no-swiping" *ngFor="let background of backgrounds" [ngStyle]="{\'background-image\': \'url(\' + background +\')\'}">\n    </ion-slide>\n  </ion-slides>\n  <div class="login-container">\n    <img class="logo" src="assets/img/logo/logo-canon.png" />\n    <form (submit)="doLogin()">\n      <strong>Login:</strong>\n      <ion-item>\n        <ion-input type="email" placeholder="Email"></ion-input>\n      </ion-item>\n      <ion-item>\n        <ion-input type="password" placeholder="Password"></ion-input>\n      </ion-item>\n      <button ion-button margin color="danger">LOGIN</button>\n      <p (click)="openResetPassword()"><strong>Forgot your password?</strong></p>\n    </form>\n  </div>\n</ion-content>'/*ion-inline-end:"C:\Users\niccolo.pascucci.TECNORAD\Documents\ionic3_Student_Project\src\pages\login\login.html"*/,
+        selector: 'page-login',template:/*ion-inline-start:"C:\Users\Niccolo\Documents\Projects\students\src\pages\login\login.html"*/'<ion-header no-border>\n\n  <ion-navbar transparent>\n\n  </ion-navbar>\n\n</ion-header>\n\n<ion-content>\n\n  <ion-slides pager="false" autoplay="2000" loop="true" speed="1500" effect="fade">\n\n    <ion-slide class="slide-background swiper-no-swiping" *ngFor="let background of backgrounds" [ngStyle]="{\'background-image\': \'url(\' + background +\')\'}">\n\n    </ion-slide>\n\n  </ion-slides>\n\n  <div class="login-container">\n\n    <img class="logo" src="assets/img/logo/logo-canon.png" />\n\n    <form (submit)="doLogin()">\n\n      <strong>Login:</strong>\n\n      <ion-item>\n\n        <ion-input type="email" placeholder="Email"></ion-input>\n\n      </ion-item>\n\n      <ion-item>\n\n        <ion-input type="password" placeholder="Password"></ion-input>\n\n      </ion-item>\n\n      <button ion-button margin color="danger">LOGIN</button>\n\n      <p (click)="openResetPassword()"><strong>Forgot your password?</strong></p>\n\n    </form>\n\n  </div>\n\n</ion-content>'/*ion-inline-end:"C:\Users\Niccolo\Documents\Projects\students\src\pages\login\login.html"*/,
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["a" /* FormBuilder */]])
 ], LoginPage);
@@ -604,11 +602,14 @@ var StudentPage = (function () {
             });
         }
     };
+    StudentPage.prototype.prova = function (ev) {
+        console.log(ev);
+    };
     return StudentPage;
 }());
 StudentPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-student',template:/*ion-inline-start:"C:\Users\niccolo.pascucci.TECNORAD\Documents\ionic3_Student_Project\src\pages\student\student.html"*/'<!--\n  Generated template for the StudentPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar>\n    <ion-title>Students list</ion-title>\n  </ion-navbar>\n</ion-header>\n<ion-content>\n    <ion-searchbar\n    [(ngModel)]="searchText" >\n  </ion-searchbar>\n<hamburger-icon *ngFor="let student of students  | filter: searchText" [name]="student.name">\n    <elemento *ngFor="let matter of student.matter" [matter]="matter.name" [vote]="matter.vote"> </elemento>  \n</hamburger-icon>\n</ion-content>'/*ion-inline-end:"C:\Users\niccolo.pascucci.TECNORAD\Documents\ionic3_Student_Project\src\pages\student\student.html"*/,
+        selector: 'page-student',template:/*ion-inline-start:"C:\Users\Niccolo\Documents\Projects\students\src\pages\student\student.html"*/'<!--\n\n  Generated template for the StudentPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n  <ion-navbar>\n\n    <ion-title>Students list</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n<ion-content>\n\n    <ion-searchbar\n\n    [(ngModel)]="searchText" >\n\n  </ion-searchbar>\n\n<hamburger-icon (ionicPopUp)="prova($event)" *ngFor="let student of students  | filter: searchText" [name]="student.name">\n\n    <elemento *ngFor="let matter of student.matter" [matter]="matter.name" [vote]="matter.vote"> </elemento>  \n\n</hamburger-icon>\n\n</ion-content>'/*ion-inline-end:"C:\Users\Niccolo\Documents\Projects\students\src\pages\student\student.html"*/,
     }),
     __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__providers_student_student_provider__["a" /* StudentProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__providers_student_student_provider__["a" /* StudentProvider */]) === "function" && _c || Object])
 ], StudentPage);
@@ -832,7 +833,7 @@ __decorate([
     __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* Nav */])
 ], MyApp.prototype, "nav", void 0);
 MyApp = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({template:/*ion-inline-start:"C:\Users\niccolo.pascucci.TECNORAD\Documents\ionic3_Student_Project\src\app\app.html"*/'\n<ion-menu [content]="content" id="menu-components">\n    <ion-header>\n        <ion-toolbar>\n            <ion-title>Menu</ion-title>\n        </ion-toolbar>\n    </ion-header>\n    <ion-content>\n        <ion-list>\n            <button menuClose ion-item *ngFor="let p of pages" [class.highlight]="p.active" (click)="openPage(p.component)">\n                <ion-icon name="{{p.icon}}"></ion-icon>\n                {{p.title}}\n            </button>\n        </ion-list>\n    </ion-content>\n</ion-menu>\n<ion-nav #content [root]="rootPage"></ion-nav>'/*ion-inline-end:"C:\Users\niccolo.pascucci.TECNORAD\Documents\ionic3_Student_Project\src\app\app.html"*/
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({template:/*ion-inline-start:"C:\Users\Niccolo\Documents\Projects\students\src\app\app.html"*/'\n\n<ion-menu [content]="content" id="menu-components">\n\n    <ion-header>\n\n        <ion-toolbar>\n\n            <ion-title>Menu</ion-title>\n\n        </ion-toolbar>\n\n    </ion-header>\n\n    <ion-content>\n\n        <ion-list>\n\n            <button menuClose ion-item *ngFor="let p of pages" [class.highlight]="p.active" (click)="openPage(p.component)">\n\n                <ion-icon name="{{p.icon}}"></ion-icon>\n\n                {{p.title}}\n\n            </button>\n\n        </ion-list>\n\n    </ion-content>\n\n</ion-menu>\n\n<ion-nav #content [root]="rootPage"></ion-nav>'/*ion-inline-end:"C:\Users\Niccolo\Documents\Projects\students\src\app\app.html"*/
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* MenuController */]])
 ], MyApp);
