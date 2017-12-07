@@ -12,6 +12,8 @@ import { StudentProvider } from '../providers/student/student.provider';
 import { StudentPageModule } from '../pages/student/student.module';
 import { HttpModule } from '@angular/http';
 import { ComponentsModule } from '../components/components.module';
+//import { BROWSER_SANITIZATION_PROVIDERS } from '@angular/platform-browser/src/browser';
+
 
 
 @NgModule({
@@ -32,7 +34,7 @@ import { ComponentsModule } from '../components/components.module';
     MyApp
   ],
   providers: [
-    
+    //BROWSER_SANITIZATION_PROVIDERS,
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
