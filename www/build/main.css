@@ -25934,6 +25934,29 @@ a:hover, a:focus {
   color: #131414;
 }
 
+mlmenu div {
+  position: relative;
+  height: 100%;
+}
+
+mlmenu div h2 {
+  margin: 0;
+  padding: 20px 0 40px 0;
+  color: #e5f4ee;
+}
+
+mlmenu .elements {
+  height: auto;
+  position: absolute;
+  z-index: -1;
+  width: 80%;
+  top: 20%;
+}
+
+mlmenu .elements button {
+  color: #00965e;
+}
+
 page-home p {
   text-align: justify;
 }

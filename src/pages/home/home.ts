@@ -7,9 +7,15 @@ import { NavController, IonicPage } from 'ionic-angular';
   templateUrl: 'home.html'
 })
 export class HomePage {
-
+  text: string = "Hello World";
+  public items: Array<{ name: string, color: string }>;
+  public item: any;
   constructor(public navCtrl: NavController) {
 
   }
-
+  ngOnInit() {
+    this.items = [{ name: "fred", color: "red" },
+    { name: "john", color: "gray" },
+    { name: "malcom", color: "green" }];
+  }
 }

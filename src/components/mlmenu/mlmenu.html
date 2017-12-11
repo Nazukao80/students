@@ -1,4 +1,7 @@
 <!-- Generated template for the MlmenuComponent component -->
-<div [@heroState]="hero.state">
-  {{text}}
+<div #elem [@heroState]="hero.state" (click)="toggleState()">
+  <h2>{{text}}</h2>  
+</div>
+<div class="elements">
+    <ng-content></ng-content>
 </div>

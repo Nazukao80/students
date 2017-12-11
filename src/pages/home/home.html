@@ -1,16 +1,19 @@
 <ion-header>
   <ion-navbar>
-      <button ion-button menuToggle>
-          <ion-icon name="menu"></ion-icon>
-        </button>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
     <ion-title>
-     Student
+      Student
     </ion-title>
   </ion-navbar>
 </ion-header>
-<ion-content padding>
- The world is your oyster.
-  <p menu>
-        If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+<ion-content>
+  <mlmenu [text]="text">
+    <ion-list>
+        <button ion-item *ngFor="let item of items" >
+          {{ item.name }}
+        </button>  
+      </ion-list>
+  </mlmenu>
 </ion-content>
